@@ -10,12 +10,41 @@ conexao = mysql.connector.connect(
 cursor = conexao.cursor()
 
 # CRUD
-nome_produto = 'todynho'
-valor = 3
-comando = f'INSERT INTO vendas (nome_produto, valor) VALUES ({nome}, {valor})'
+nome_produto = "todynho"
+comando = f'DELETE FROM vendas WHERE nome_produto = "{nome_produto}"'
 cursor.execute(comando) # manda o comando ser executado
 conexao.commit() # edita o banco de dados
-# resultado = cursor.fetchall() # ler o banco de dados
+
 
 cursor.close()
 conexao.close()
+
+#CREATE---------------------------------------------------
+
+# nome_produto = "chocolate"
+# valor = 15
+# comando = f'INSERT INTO vendas (nome_produto, valor) VALUES ("{nome_produto}", {valor})'
+# cursor.execute(comando) # manda o comando ser executado
+# conexao.commit() # edita o banco de dados
+
+# READ----------------------------------------------------
+
+# comando = f'SELECT * FROM vendas'
+# cursor.execute(comando) # manda o comando ser executado
+# resultado = cursor.fetchall() # ler o banco de dados
+# print(resultado)
+
+# UPDATE -------------------------------------------------
+
+# nome_produto = "todynho"
+# valor = 6
+# comando = f'UPDATE vendas SET valor = {valor} WHERE nome_produto = "{nome_produto}"'
+# cursor.execute(comando) # manda o comando ser executado
+# conexao.commit() # edita o banco de dados
+
+# DELETE -------------------------------------------------
+
+# nome_produto = "todynho"
+# comando = f'DELETE FROM vendas WHERE nome_produto = "{nome_produto}"'
+# cursor.execute(comando) # manda o comando ser executado
+# conexao.commit() # edita o banco de dados
